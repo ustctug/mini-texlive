@@ -6,10 +6,10 @@ PACKAGES="zhnumber zapfding"
 DOCPACKAGES="latexmk texdoc ctex"
 SRCPACKAGES=""
 
-mkdir /tmp/install-texlive
+mkdir -p /tmp/install-texlive
 cd /tmp/install-texlive/
 
-curl -sSL $REMOTE/install-tl-unx.tar.gz | tar -xv -C ./ --strip-components=1
+curl -sSL $REMOTE/install-tl-unx.tar.gz | tar -xzv -C ./ --strip-components=1
 
 cat << EOF > texlive.profile
 selected_scheme scheme-basic
