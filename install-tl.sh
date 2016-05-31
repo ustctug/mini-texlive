@@ -3,7 +3,7 @@
 REMOTE="http://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet"
 TEXLIVE=2015
 PACKAGES="zhnumber zapfding"
-DOCPACKAGES="latexmk texdoc ctex"
+DOCPACKAGES="latexmk texdoc ctex fandol algorithm2e"
 SRCPACKAGES=""
 
 mkdir -p /tmp/install-texlive
