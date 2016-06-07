@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REMOTE="http://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet"
-TEXLIVE=2015
+TEXLIVE=2016
 PACKAGES="zhnumber zapfding"
 DOCPACKAGES="latexmk texdoc ctex fandol algorithm2e"
 SRCPACKAGES=""
