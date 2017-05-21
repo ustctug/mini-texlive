@@ -1,9 +1,8 @@
 #!/bin/bash
 
 REMOTE="http://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet"
-TEXLIVE=2016
-PACKAGES="zhnumber zapfding"
-DOCPACKAGES="latexmk texdoc ctex fandol algorithm2e"
+PACKAGES="algorithm2e environ latexmk relsize stringstrings texdoc titlesec trimspaces was"
+DOCPACKAGES=""
 SRCPACKAGES=""
 
 mkdir -p /tmp/install-texlive
@@ -15,9 +14,10 @@ cat << EOF > texlive.profile
 selected_scheme scheme-basic
 TEXMFHOME ~/.texmf
 collection-basic 1
+collection-fontsrecommended 1
 collection-genericrecommended 1
+collection-langchinese 1
 collection-latex 1
-collection-latexextra 1
 collection-latexrecommended 1
 collection-xetex 1
 option_autobackup 0
@@ -26,9 +26,11 @@ option_src 0
 EOF
 
 PLATFORM=`./install-tl --print-platform`
+TEXLIVE=$(./install-tl --version | egrep -o "20..")
 TEXBIN="/usr/local/texlive/${TEXLIVE}/bin/${PLATFORM}"
 ./install-tl -profile texlive.profile -repository $REMOTE
 
+echo PATH=$PATH:$TEXBIN
 echo 'export PATH=$PATH':$TEXBIN >> ~/.bash_profile
 $TEXBIN/tlmgr install $PACKAGES
 $TEXBIN/tlmgr install --with-doc $DOCPACKAGES
