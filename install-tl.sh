@@ -1,8 +1,8 @@
 #!/bin/bash
 
 REMOTE="http://mirrors.ustc.edu.cn/CTAN/systems/texlive/tlnet"
-PACKAGES="algorithm2e environ latexmk relsize stringstrings texdoc titlesec \
-trimspaces ulem was"
+PACKAGES="algorithm2e environ ifoddpage latexmk relsize stringstrings texdoc \
+    titlesec trimspaces ulem was"
 DOCPACKAGES=""
 SRCPACKAGES=""
 
